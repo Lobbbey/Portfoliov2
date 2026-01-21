@@ -43,6 +43,7 @@ export default function Navigation() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6 }}
             >
+                
 
             </motion.nav>
         </>
