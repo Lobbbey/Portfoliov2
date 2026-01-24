@@ -4,9 +4,13 @@ import { ArrowDown } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 
 export function Hero() {
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const scrollToContact = () =>{
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth"});
+  }
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
@@ -72,7 +76,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            {/* Fix Wording */}A creative developer passionate about building
+            {/* Fix Wording */}An enthusiastic developer passionate about building
             beautiful, functional digital experiences
           </motion.p>
 
@@ -85,7 +89,7 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={scrollToAbout}
+              onClick={scrollToProjects}
             >
               View My Work
             </Button>
@@ -93,6 +97,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary/10"
+              onClick={scrollToContact}
             >
               Get In Touch
             </Button>

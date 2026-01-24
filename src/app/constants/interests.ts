@@ -10,11 +10,11 @@ export const interests = [
     {
       icon: Film,
       title: "Movies",
-      description: "A cinephile at heart. I love exploring stories and drawing inspiration from great filmmaking.",
+      description: "A cinephile at heart. I love exploring unique concepts and drawing inspiration from great filmmaking.",
     },
     {
       icon: Music,
       title: "Music",
-      description: "Music fuels my creativity. Whether coding or relaxing, there's always a soundtrack playing.",
+      description: "Music fuels my work. Whether coding or relaxing, there's always an album playing.",
     },
   ];
