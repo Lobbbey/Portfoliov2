@@ -1,11 +1,11 @@
 'use client';
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import { Button } from "@/app/compponents/ui/button";
+import { Button } from "@/app/components/ui/button";
 
-export default function Hero() {
+export function Hero() {
   const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -52,10 +52,10 @@ export default function Hero() {
           >
             Welcome to my portfolio
           </motion.p>
-          
+
           <motion.h1
             className="mb-6"
-            style={{ fontSize: '4rem', lineHeight: '1.1' }}
+            style={{ fontSize: "4rem", lineHeight: "1.1" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -65,15 +65,15 @@ export default function Hero() {
               Joshua Bandy
             </span>
           </motion.h1>
-          
+
           <motion.p
             className="text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-          > 
-          {/* Fix Wording */}
-            A creative developer passionate about building beautiful, functional digital experiences
+          >
+            {/* Fix Wording */}A creative developer passionate about building
+            beautiful, functional digital experiences
           </motion.p>
 
           <motion.div
@@ -82,16 +82,16 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
               onClick={scrollToAbout}
             >
               View My Work
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="border-primary text-primary hover:bg-primary/10"
             >
               Get In Touch

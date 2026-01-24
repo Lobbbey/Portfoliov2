@@ -2,9 +2,9 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/app/compponents/ui/button";
+import { Button } from "@/app/components/ui/button"; // Adjust path if needed
 
-export default function Navigation() {
+export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,7 +25,10 @@ export default function Navigation() {
     { label: "Contact", href: "#contact" },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     if (href === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -39,7 +42,9 @@ export default function Navigation() {
     <>
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border" : ""
+          isScrolled
+            ? "bg-background/95 backdrop-blur-sm border-b border-border"
+            : ""
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -70,9 +75,16 @@ export default function Navigation() {
                   {item.label}
                 </a>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Resume
-              </Button>
+              
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Resume
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -112,9 +124,16 @@ export default function Navigation() {
                 {item.label}
               </motion.a>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Resume
-            </Button>
+            
+            <a 
+              href="/resume.pdf"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Resume
+              </Button>
+            </a>
           </div>
         </motion.div>
       )}
