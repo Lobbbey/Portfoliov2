@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/app/components/ui/button"; // Adjust path if needed
+import { Button } from "@/app/components/ui/button";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -87,10 +87,11 @@ export function Navigation() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - UPDATED WITH ARIA-LABEL */}
             <button
               className="md:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6 text-primary" />
@@ -105,6 +106,7 @@ export function Navigation() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
+          data-testid="mobile-menu"
           className="fixed inset-0 z-40 md:hidden bg-background/95 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -126,7 +128,7 @@ export function Navigation() {
             ))}
             
             <a 
-              href="/resume.pdf"
+              href="/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
             >
