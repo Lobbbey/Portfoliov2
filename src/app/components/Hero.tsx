@@ -109,7 +109,6 @@ export function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown className="w-6 h-6 text-primary" />
           </motion.div>
         </motion.div>
       </div>
